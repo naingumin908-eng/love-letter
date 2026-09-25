@@ -1,1 +1,49 @@
 
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You ❤️</title>
+  <style>
+    body { background-color: #ffe6ea; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; text-align: center; }
+    .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 85%; max-width: 350px; }
+    .btn { padding: 10px 20px; font-size: 16px; border: none; border-radius: 20px; cursor: pointer; margin: 10px; font-weight: bold; }
+    #yesBtn { background-color: #ff4d6d; color: white; }
+    #noBtn { background-color: #cccccc; color: black; position: absolute; }
+    .hidden { display: none; }
+    .letter { background: #fff0f3; padding: 20px; border-radius: 10px; border: 1px solid #ffb3c1; text-align: left; }
+  </style>
+</head>
+<body>
+
+  <div id="mainCard" class="card">
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdW93cnNwbHRycWFmbWhseXVzeXpzaTJwYzY3OXBmNzAyc3JtdWZ5aiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/MDJ9IbxxvDUQM/giphy.gif" width="120">
+    <h2>ငါတို့ တစ်ခေါက် ပြန်တွဲကြမလား? ❤️</h2>
+    <button id="yesBtn" class="btn" onclick="openLetter()">Yes</button>
+    <button id="noBtn" class="btn" onmouseover="moveButton()" onclick="moveButton()">No</button>
+  </div>
+
+  <div id="letterCard" class="card hidden">
+    <div class="letter">
+      <h3 style="color:#ff4d6d; text-align:center;">Confession Letter 💌</h3>
+      <p>မင်းနဲ့ ပြန်တွဲရရင် အရမ်းဝမ်းသာမှာပါ။ အရင်ကထက်လည်း ပိုပြီး ဂရုစိုက် စာနာပေးပါ့မယ်... ❤️</p>
+    </div>
+  </div>
+
+  <script>
+    function moveButton() {
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      const noBtn = document.getElementById('noBtn');
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    }
+
+    function openLetter() {
+      document.getElementById('mainCard').classList.add('hidden');
+      document.getElementById('letterCard').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
